@@ -23,9 +23,19 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+"solarized plugin
 syntax enable
-highlight Normal ctermfg=grey ctermbg=darkblue
+let g:solarized_termcolors=256
+set t_Co=256
+if has("gui_running")
+  set background=light
+else 
+  set background=dark
+endif
 colorscheme solarized
+
+"highlight Normal ctermfg=grey ctermbg=darkblue
 set number
 set numberwidth=3
 set cpoptions+=n
