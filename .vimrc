@@ -16,7 +16,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -59,14 +59,16 @@ inoremap {<CR> {<CR>}<C-o>O
 
 let g:ctrlp_map =  '<c-p>'
 let g:ctrlp_cmd =  'CtrlP'
+let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra' " the nearest ancestor that contains .git .hg .svn, the current directory
 " ignores files or folders for ctrl+P fuzzy search
 let g:ctrlp_custom_ignore = {
- \ 'dir': '\v[\/]\.(git|hg|svn)$',
+ \ 'dir': '\v[\/](node_modules|target|dist|bower_components)|(\.(git|hg|svn))$',
  \ 'file': '\v\.(exe|so|dll)$',
  \ 'link:': 'some_bad_symbolic_links',
  \ }
 
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 nnoremap <C-J> <C-W><C-J> "Ctrl-j to move down a split  
 nnoremap <C-K> <C-W><C-K> "Ctrl-k to move up a split  
 nnoremap <C-L> <C-W><C-L> "Ctrl-l to move    right a split  
