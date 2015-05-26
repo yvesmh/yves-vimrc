@@ -16,10 +16,12 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'elzr/vim-json'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -63,7 +65,7 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra' " the nearest ancestor that contains .git .hg .svn, the current directory
 " ignores files or folders for ctrl+P fuzzy search
 let g:ctrlp_custom_ignore = {
- \ 'dir': '\v[\/](node_modules|target|dist|bower_components)|(\.(git|hg|svn))$',
+ \ 'dir': '\v[\/](node_modules|target|dist|bower_components)|(\.(git|hg|svn|sass-cache|tmp))$',
  \ 'file': '\v\.(exe|so|dll)$',
  \ 'link:': 'some_bad_symbolic_links',
  \ }
